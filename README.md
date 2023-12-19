@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+The website follows a structured flow: Landing page -> Login page (if the "Join Now" button is clicked and the user hasn't logged in) -> Registration form (for enrollment) -> Payment page -> User page (profile page). The website is built on React.js and utilizes Google Cloud.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To run this project locally, it is necessary to install node modules first using the npm install command. 
+The website features a navbar for easy navigation back to the home page or the profile page, which becomes accessible only after enrollment.
+In the registration form, the user is required to provide details such as their name, email, age, batch, and mobile number. All these details are stored in the Firestore database.
+A constraint has been implemented in the registration form to ensure that users aged between 18 and 56 are eligible to apply. After logging in, users can fill out the form and proceed to make payments using card details, with the default amount set to 500.
 
-## Available Scripts
+Users can create accounts or log in using their email and password. Additionally, for enhanced security and efficiency, users can log in with Google through Firebase authentication.
+Upon successful enrollment, users gain access to a profile page where all the saved details from the registration form are displayed. Notably, users are restricted from changing their batch within the same month of enrollment.
+Notifications are displayed when the enrollment period concludes, and users can re-enroll using the same registration form after receiving the notification.
 
-In the project directory, you can run:
+LANDING PAGE:
 
-### `npm start`
+![Screenshot (176)](https://github.com/kiran023/flexmoney_assesment/assets/83301086/8b12f6c4-7c2b-419c-87d5-13180824aae4)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+REGISTRATION PAGE:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot (177)](https://github.com/kiran023/flexmoney_assesment/assets/83301086/e0b1f5e3-b88d-48d2-a8e6-5cc6b42e6586)
 
-### `npm test`
+LOGIN PAGE:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot (178)](https://github.com/kiran023/flexmoney_assesment/assets/83301086/ae27770c-4eca-4df3-b58b-cf34a644dfd1)
