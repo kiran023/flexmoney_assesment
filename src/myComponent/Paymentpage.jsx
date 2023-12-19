@@ -8,13 +8,15 @@ export const Paymentpage = () => {
     const [expiry, setexpiry] = useState('');
     const [amount, setamount] = useState('500');
     const navigation=useNavigate();
-    const payment=()=>{
+
+    const completePayment=()=>{
         if (!cvv || !name || !cardnumber || !expiry)
             alert("fill all the enteries")
-        
+
             alert("endrolled successfully")
             navigation('/userpage')
     }
+    
   return (
     <div className='form'>
         <div className='form-item'>
@@ -45,7 +47,7 @@ export const Paymentpage = () => {
           <input type="password" onChange={(e) => { setcvv(e.target.value) }} value={cvv} />
           </div>
 
-          <button onClick={payment} className='submit-btn'>Make Payment</button>
+          <button onClick={completePayment} className='submit-btn'>Make Payment</button>
           
         </div>
       </div>

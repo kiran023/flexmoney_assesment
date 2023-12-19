@@ -4,7 +4,7 @@ import { collection, addDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from './Navbar';
 
-export const Form = () => {
+export const Form = (props) => {
     const localvariable = JSON.parse(localStorage.getItem("email"))
     const collectionref = collection(database, localvariable)
     const [name, setname] = useState('');
@@ -13,6 +13,7 @@ export const Form = () => {
     const [batch, setbatch] = useState('');
     const [mobile, setmobile] = useState('');
     const navigate = useNavigate();
+    
     const submitForm = () => {
         if (!age || !name || !email || !batch || !mobile)
             alert("fill all the enteries")
@@ -20,6 +21,8 @@ export const Form = () => {
         alert("enter valid mobile number")
         else if (age < 18 || age > 65)
             alert("currently we are not taking registration of age below 18 and above 65")
+        else if(props.data.length===1)
+         alert("only one person can enroll from one account")
         else {
             addDoc(collectionref, {
                 name: name,

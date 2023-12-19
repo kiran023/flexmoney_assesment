@@ -6,16 +6,15 @@ import {Link} from 'react-router-dom';
 export const Login= () => {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
+  const navigate= useNavigate()
+
   const clearData=()=>{
     setemail('');
     setpassword('')
   }
-  const navigate= useNavigate()
-
-
-  const auth = getAuth();
-  const provider = new GoogleAuthProvider();
-
+  
   const submit = (e) => {
     e.preventDefault()
     signInWithEmailAndPassword(auth, email, password)
@@ -35,6 +34,7 @@ export const Login= () => {
   provider.setCustomParameters({
     prompt: 'select_account'
   });
+
   const googlesubmit = () => {
     signInWithPopup(auth, provider)
       .then((response) => {
@@ -49,6 +49,7 @@ export const Login= () => {
         alert(error.message);
       });
   }
+  
   return (
     <>
       <div className='form'>
@@ -62,8 +63,6 @@ export const Login= () => {
           <div> Password</div>
           <input type="password" onChange={(e) => { setpassword(e.target.value) }} value={password} />
           </div>
-
-          {/* <div>Forgot Your password</div> */}
           <button onClick={submit} className='submit-btn'>Signin</button>
           <button onClick={googlesubmit} className='submit-btn'>Sign in with Google</button>
           <div style={{display:"flex"}}>

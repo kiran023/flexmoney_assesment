@@ -5,6 +5,7 @@ import { Navbar } from './Navbar';
 export const Homepage = () => {
     const user = JSON.parse(localStorage.getItem("email"))
     const navi = useNavigate()
+    
     const navigate=()=>{
        if(user===null)
        navi('/login')

@@ -1,3 +1,6 @@
+.home{
+  overflow: hidden;
+}
 .btn
 {
   height: 100%;
@@ -17,8 +20,8 @@ background-repeat: no-repeat;
 
 .btn button{
   margin-top: -5%;
-  font-size: 25px;
-  padding: 15px;
+  font-size: 18px;
+  padding: 11px;
   border-radius: 8px;
   cursor: pointer;
 }
@@ -131,4 +134,24 @@ background-repeat: no-repeat;
   cursor: pointer;
   margin: 0px 30px;
 
+}
+
+
+@media screen and (max-width:600px) {
+  .backgroundIMG{
+    margin-left: -30%;
+  }
+  .btn{
+    margin-left: 12%;
+  }
+}
+@media screen and (max-width:500px) {
+  .backgroundIMG{
+    background-image:
+  url('https://images.pexels.com/photos/13849063/pexels-photo-13849063.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  margin-top: -14%;
+  }
+  .btn{
+    margin-left: 12%;
+  }
 }
